@@ -1,0 +1,16 @@
+{
+  "turn": 50,
+  "fish_population": 384.5549377606721,
+  "teams": [
+    {
+      "name": "Team A",
+      "boats": 10,
+      "cash": 7277.987184217034
+    },
+    {
+      "name": "Team B",
+      "boats": 10,
+      "cash": 7277.987184217034
+    }
+  ]
+}
