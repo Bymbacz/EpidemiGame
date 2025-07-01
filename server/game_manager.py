@@ -17,15 +17,20 @@ class GameManager:
         # Tu inicjalizujemy current_game_id, żeby nie bylo AttributeError
         self.current_game_id: Optional[str] = None
 
-    def start_game(self, team_names: list[str], game_id: str = None) -> dict:
+    def start_game(self, team_names: list[str], starting_sea_fish=1000, starting_ocean_fish=2000, sea_fish_capacity=2000, ocean_fish_capacity=2000, starting_cash=1000, game_id: str = None) -> dict:
         if game_id:
             state = self.repo.load_state(game_id)
-            # zakładamy, że FishGameModel.from_dict istnieje
             self.game = FishGameModel.from_dict(state)
             self.current_game_id = game_id
         else:
-            self.game = FishGameModel(team_names)
-            # generujemy nowe ID dla tej gry
+            self.game = FishGameModel(
+                team_names,
+                initial_ocean_fish_population=starting_ocean_fish,
+                initial_sea_fish_population=starting_sea_fish,
+                ocean_fish_capacity=ocean_fish_capacity,
+                sea_fish_capacity=sea_fish_capacity,
+                initial_cash=starting_cash
+            )
             self.current_game_id = str(uuid4())
         return self.get_state()
 
