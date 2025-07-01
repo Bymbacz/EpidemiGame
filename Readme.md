@@ -2,6 +2,12 @@
 
 EpidemiGame MVP to turowa symulacja agentowa inspirowana grą Fishbanks, w której zespoły pozyskują i reinwestują zasoby w kolejnych turach. Backend jest napisany w Pythonie 3.13 z wykorzystaniem Mesy jako rdzenia symulacji, FastAPI do obsługi REST i WebSocketów oraz Uvicorna (z biblioteką websockets) jako ASGI do komunikacji w czasie rzeczywistym. Frontend używa Reacta z Vite dla szybkiego odświeżania i bundlingu, a stylowanie oparto na Tailwind CSS. Użytkownicy mogą uruchomić symulację dla dwóch zespołów i kliknąć **End Turn**, aby przesunąć grę o jedną turę (maksymalnie 10 tur).
 
+![Init screen](Pics/init_screen.png)
+
+![Start screen](Pics/start_screen.png)
+
+![Finish screen](Pics/finish_screen.png)
+
 ## Funkcjonalności
 
 * **Modelowanie agentowe (Mesa):** Zespoły działają jako agenci, łowią zasoby, a populacja regeneruje się zgodnie z modelem logistycznym.
